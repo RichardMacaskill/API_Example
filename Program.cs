@@ -1,8 +1,8 @@
 ﻿using Neo4j.Driver;
 
-var uri = "neo4j+s://cas-testlab-neo4j.co.uk:7687";
-var username = "moviesuser";
+var uri = Environment.GetEnvironmentVariable("NEO4J_URI");
 var password = Environment.GetEnvironmentVariable("NEO4J_PWD");
+var username = "moviesuser";
 
 var driver = GraphDatabase.Driver(uri, AuthTokens.Basic(username, password));
 
